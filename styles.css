@@ -1,0 +1,104 @@
+.container {
+  width: 350px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #512DA8;
+}
+
+.balance-section, .address-section {
+  margin: 15px 0;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+button {
+  background: #512DA8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background: #311B92;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#wallet-address {
+  word-break: break-all;
+  font-size: 12px;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+#import-section, #create-wallet-section, #login-section {
+  text-align: center;
+}
+
+#lockWallet {
+  background: #f44336;
+}
+
+#lockWallet:hover {
+  background: #d32f2f;
+}
+
+.loading {
+  color: #666;
+  font-style: italic;
+}
+
+.balance-section button {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #4CAF50;
+}
+
+.balance-section button:hover {
+  background: #45a049;
+}
+
+#balance {
+  font-size: 24px;
+  font-weight: bold;
+  color: #512DA8;
+  margin: 10px 0;
+}
+
+/* 添加危险按钮样式 */
+.danger-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.danger-btn:hover {
+  background: #c82333;
+} 

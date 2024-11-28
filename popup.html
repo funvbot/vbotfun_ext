@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Solana Wallet</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="libs/bs58.js"></script>
+  <script src="libs/web3.min.js"></script>
+  <script src="libs/crypto-js.min.js"></script>
+  <script src="popup.js"></script>
+  <script src="wallet.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>一个简易钱包-搭配Vbot</h1>
+     <!-- 在适当的位置添加设置按钮 -->
+     <div class="settings-link">
+      <button id="open-settings">设置</button>
+    </div>
+    <!-- 登录界面 -->
+    <div id="login-section" style="display:none;">
+      <h2>请输入密码</h2>
+      <input type="password" id="password-input" placeholder="输入钱包密码">
+      <button id="login-btn">解锁钱包</button>
+      <p class="error-message" id="login-error"></p>
+    </div>
+
+    <!-- 创建钱包界面 -->
+    <div id="create-wallet-section" style="display:none;">
+      <h2>创建新钱包</h2>
+      <input type="password" id="new-password" placeholder="设置钱包密码">
+      <input type="password" id="confirm-password" placeholder="确认钱包密码">
+      <button id="createWallet">创建钱包</button>
+      <button id="showImport">导入已有钱包</button>
+    </div>
+
+    <!-- 导入钱包界面 -->
+    <div id="import-section" style="display:none;">
+      <h2>导入钱包</h2>
+      <input type="password" id="import-password" placeholder="设置钱包密码">
+      <textarea id="private-key" placeholder="输入私钥（Base58格式）"></textarea>
+      <button id="importWallet">导入钱包</button>
+      <button id="backToCreate">返回创建钱包</button>
+    </div>
+    
+    <!-- 钱包主界面 -->
+    <div id="wallet-info" style="display:none;">
+      <div class="balance-section">
+        <h2>账户余额</h2>
+        <p id="balance">
+          <span class="loading">正在加载...</span>
+        </p>
+      </div>
+      
+      <div class="address-section">
+        <h2>钱包地址</h2>
+        <p id="wallet-address"></p>
+      </div>
+
+      <div class="actions">
+        <button id="sendTransaction">发送SOL</button>
+        <button id="lockWallet">锁定钱包</button>
+        <button id="clearWallet" class="danger-btn">清除钱包</button>
+      </div>
+
+      <div id="send-form" style="display:none;">
+        <input type="text" id="recipient" placeholder="接收方地址">
+        <input type="number" id="amount" placeholder="金额 (SOL)">
+        <button id="confirmSend">确认发送</button>
+      </div>
+    </div>
+
+   
+  </div>
+</body>
+</html>

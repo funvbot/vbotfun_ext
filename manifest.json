@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Vbot Fun",
+    "version": "1.0",
+    "description": "一个简易钱包-搭配Vbot使用",
+    "permissions": [
+      "storage",
+      "activeTab"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "options_page": "settings.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://localhost/*", "http://localhost/*","https://*.vbot.fun/*","https://vbot.fun/*"],
+          "js": ["libs/web3.min.js", "libs/bs58.js", "libs/crypto-js.min.js", "content.js", "wallet.js"]
+        }
+    ],
+    "web_accessible_resources": [{
+      "resources": ["libs/*"],
+      "matches": ["<all_urls>"]
+    }],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+    }
+}
+  
